@@ -9,4 +9,9 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public DbSet<PC2.Models.Cuenta> DataCuenta { get; set; }
+
+
+
 }
