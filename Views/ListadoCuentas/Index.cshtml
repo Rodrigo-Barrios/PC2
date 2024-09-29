@@ -1,0 +1,44 @@
+@model PC2.ViewModel.CuentaViewModel
+@{
+    ViewData["Title"] = "Listado de Cuentas";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div>
+                    <h5 class="card-title">Listado de Cuentas Bancarias</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Titular</th>
+                                <th>Tipo de Cuenta</th>
+                                <th>Saldo Inicial</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.ListCuenta != null && Model.ListCuenta.Any())
+                            {
+                                @foreach (var cuenta in Model.ListCuenta)
+                                {
+                                    <tr>
+                                        <td>@cuenta.NombreTitular</td>
+                                        <td>@cuenta.TipoCuenta</td>
+                                        <td>@cuenta.SaldoInicial</td>
+                                        <td>@cuenta.Email</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
